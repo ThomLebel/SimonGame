@@ -3,6 +3,7 @@ var buttonList = [];
 var pressedButtonIndex = 0;
 
 $(".btn").click(check_button);
+$(".btn").tap(check_button);
 
 $(document).keypress(function () {
     if (currentLevel == 0) {
@@ -10,7 +11,7 @@ $(document).keypress(function () {
     }
 });
 
-$('body').click(function () {
+$('body').tap(function () {
     if (currentLevel == 0) {
         setTimeout(game, 200);
     }
