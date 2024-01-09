@@ -10,6 +10,11 @@ $(document).keypress(function () {
     }
 });
 
+$('body').click(function () {
+    if (currentLevel == 0) {
+        setTimeout(game, 200);
+    }
+});
 
 function game() {
     currentLevel++;
