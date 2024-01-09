@@ -2,8 +2,8 @@ var currentLevel = 0;
 var buttonList = [];
 var pressedButtonIndex = 0;
 
-$(".btn").click(check_button);
-$(".btn").tap(check_button);
+// $(".btn").click(check_button);
+$(".btn").on("tap", check_button);
 
 $(document).keypress(function () {
     if (currentLevel == 0) {
@@ -11,11 +11,12 @@ $(document).keypress(function () {
     }
 });
 
-$('body').tap(function () {
+$('body').on("tap", function () {
     if (currentLevel == 0) {
         setTimeout(game, 200);
     }
 });
+
 
 function game() {
     currentLevel++;
@@ -67,6 +68,7 @@ function gameOver() {
     });
     $("h1").text("Game Over, Press Any Key to Restart");
     currentLevel = 0;
+    pressedButtonIndex = 0;
 }
 
 function playSound(sound) {
